@@ -32,3 +32,24 @@ office.office_code = users.office_code;
 SELECT * FROM users;
 
 
+
+-- question 2
+SELECT 
+    p.productName, 
+    p.productVendor, 
+    pl.productLine
+FROM products p
+LEFT JOIN productlines pl 
+    ON p.productLine = pl.productLine;
+
+-- qn 3
+SELECT 
+    o.orderDate, 
+    o.shippedDate, 
+    o.status, 
+    o.customerNumber
+FROM customers c
+RIGHT JOIN orders o 
+    ON c.customerNumber = o.customerNumber
+LIMIT 10;
+
